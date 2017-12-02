@@ -1,2 +1,2 @@
-# tktbot-web
-Backend for tktbot
+# TKTBot Web
+The bot for study.
