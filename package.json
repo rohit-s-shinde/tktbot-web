@@ -1,0 +1,19 @@
+{
+  "name": "tktbot",
+  "version": "1.0.0",
+  "description": "Bot implementation using hapi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "botbuilder": "^3.12.0",
+    "dotenv-extended": "^2.0.1",
+    "glue": "^4.2.1",
+    "hapi": "^16.6.2",
+    "inert": "^4.2.1",
+    "orientjs": "^2.2.7"
+  }
+}
