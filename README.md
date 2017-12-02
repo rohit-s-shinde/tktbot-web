@@ -1,2 +1,1 @@
-# tktbot-web
-Backend for tktbot
+# TKTBot Web
