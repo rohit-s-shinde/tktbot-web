@@ -18,7 +18,7 @@ const bot = new builder.UniversalBot(connector, [
     },
     (session, result, next) => {
         session.endConversation(`Welcome, ${result.response}`);
-    } 
+    }
 ]);
 
 var recognizer = new builder.LuisRecognizer(process.env.LUIS_MODEL_URL);
