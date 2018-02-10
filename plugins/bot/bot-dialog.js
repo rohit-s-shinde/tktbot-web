@@ -1,6 +1,6 @@
 var bot = require("./bot").bot;
 var recognizer = require("./bot").recognizer;
-var db = require("./dbconnector"); //OrintDb setup
+var db = require("../../core/db/dbconnector"); //OrintDb setup
 
 bot.recognizer(recognizer);
 
