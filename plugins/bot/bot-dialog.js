@@ -1,6 +1,7 @@
 var bot = require("./bot").bot;
 var recognizer = require("./bot").recognizer;
 var db = require("../../core/db/dbconnector"); //OrintDb setup
+const builder = require('botbuilder');
 
 bot.recognizer(recognizer);
 
@@ -17,9 +18,19 @@ exports.default = function () {
             session.beginDialog(args.action, args);
         }
     });
+
+    bot.dialog('greeting',(session) =>{
+        session.endDialog(`Hi there!`);
+    }).triggerAction({
+        matches: 'Greetings',
+        onSelectAction: (session, args) => {
+            session.beginDialog(args.action, args);
+        }
+    });
     
     bot.dialog('developers',(session) =>{
-       // (function (session, result) {
+
+        session.endDialog(`\n\nThese are the developers.'\n`);        
             db.query("select First_Name from user").then(
                 function (result) {
                 console.log("query result received");
@@ -28,14 +39,12 @@ exports.default = function () {
                 var dev="";
                 for(a=0; a<result.length;a++)
                 {
-                  dev += result[a].First_Name+";";
+                  dev += result[a].First_Name+",\n";
                 }
                 
-                session.send(dev)
-                session.endDialog(`\n\nThese are the developers.'\n`);
+                session.send(dev+';');
             }
         )
-        session.endDialog(`\n\nThese are the developers.'\n`);
     }).triggerAction({
         matches: /developers/i,
         onSelectAction: (session, args) => {
@@ -69,3 +78,4 @@ exports.default = function () {
         },
     ]); 
 }
+>>>>>>> 18182a2107fd6342a893442699aa8f2145ffe03c
