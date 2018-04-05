@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "botbuilder": "^3.12.0",
+    "botbuilder": "^3.14.0",
     "dotenv-extended": "^2.0.1",
     "glue": "^4.2.1",
     "hapi": "^16.6.2",

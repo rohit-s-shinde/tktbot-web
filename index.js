@@ -31,6 +31,8 @@ const manifest = {
     ]
 };
 
+
+
 const options = {
     relativeTo: __dirname
 };

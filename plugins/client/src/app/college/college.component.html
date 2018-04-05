@@ -1,0 +1,31 @@
+<app-sidebar></app-sidebar>
+<html>
+  <head></head>
+  <body>
+    <form action="">
+      <table align="center">
+        <tr>
+          <th>Status</th>
+          <th>Question No.</th>
+          <th>Question</th>
+          <th>Answer</th>
+          <th>Entities</th>
+        </tr>
+        <tr *ngFor="let quess of ques">
+          <td><input type="checkbox"></td>
+          <td><input type="text" id="que_no" value={{quess.que_no}}></td>
+          <td><input type="text" id="que" value={{quess.que}}></td>
+          <td><input type="text" id="ans" value={{quess.ans}}></td>
+          <td><input type="text" id="ent" value={{quess.ent}}></td>
+        </tr>
+      </table>
+      <table align="center" class="bt">
+        <tr>
+          <td class="rw"><button type="button">Add</button></td>
+          <td class="rw"><button type="button">Update</button></td>
+          <td class="rw"><button type="button">Delete</button></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
