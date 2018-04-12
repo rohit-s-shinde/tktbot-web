@@ -6,7 +6,7 @@ var dbServer = OrientDB({
     password: 'root'
 });
 var db = dbServer.use({
-    name: 'tktnet',
+    name: 'TKTNET',
     username: 'root',
     password: 'root'
 });

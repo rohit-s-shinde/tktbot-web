@@ -5,7 +5,7 @@ exports.default = function(server){
         path: '/client/{param*}',
         handler: {
             directory: {
-                path: path.join('public','')
+                path: path.join('public')
             }
         }
     });
