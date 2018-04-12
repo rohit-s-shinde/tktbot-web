@@ -10,7 +10,7 @@ bot.recognizer(recognizer);
 exports.default = function () {
 
 
-    bot.dialog('greetings',    (session, args, next) => {
+    bot.dialog('greetings', [(session, args, next) => {
         const botName = 'TKIET Bot';
         const description = "I'm a Bot who can provide you information about College and Admission process!";
 
@@ -21,7 +21,7 @@ exports.default = function () {
     },
     (session, result, next) => {
         session.endConversation(`Welcome, ${result.response}`);
-    }).triggerAction({
+    }]).triggerAction({
     matches: 'Greetings'
     });
 
@@ -128,8 +128,9 @@ bot.dialog('admission', [
        // session.send(' We are analyzing your message: \'%s\'', session.message.text);
 
         // try extracting entities
-        var admitdoc = builder.EntityRecognizer.findEntity(args.intent.entities, 'document');
+        var admitdoc = builder.EntityRecognizer.findEntity(args.intent.entities, 'doc_required');
         var admitdate = builder.EntityRecognizer.findEntity(args.intent.entities, 'admission_date');
+        var admitloc = builder.EntityRecognizer.findEntity(args.intent.entities, 'admission_location');
         var officetime = builder.EntityRecognizer.findEntity(args.intent.entities, 'time');
         var cutoff = builder.EntityRecognizer.findEntity(args.intent.entities, 'cutoff');
 
@@ -147,7 +148,14 @@ bot.dialog('admission', [
                 console.log(result);
                 session.send(result[0].Information+"\n");
                 })
-        }else if (officetime) {
+        }else if (admitloc) {
+            db.query("select Information from College where Keyword = 'location'").then(
+                function (result) {
+                console.log("query result received");
+                console.log(result);
+                session.send(result[0].Information+"\n");
+                })
+    }   else if (officetime) {
             db.query("select Information from Admission where Keyword = 'officetime'").then(
                 function (result) {
                 console.log("query result received");

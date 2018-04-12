@@ -1,6 +1,6 @@
 var OrientDB = require('orientjs');
 var dbServer = OrientDB({
-    host: '192.168.43.196',
+    host: 'localhost',
     port: 2424,
     username: 'root',
     password: 'root'
