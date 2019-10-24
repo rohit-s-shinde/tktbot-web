@@ -5,7 +5,6 @@ const builder = require('botbuilder');
 var Store = require('./store');
 
 bot.recognizer(recognizer);
-//var clg_name = builder.EntityRecognizer.findEntity(args.intent.entities, 'clg_name');
 
 exports.default = function () {
 
@@ -109,7 +108,6 @@ exports.default = function () {
 
     bot.dialog('ShowBotReviews', function (session, args) {
         // retrieve hotel name from matched entities
-       // var botEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'depatment');
             session.send('Looking for reviews of this application ...');
             Store.searchBotReviews()
                 .then(function (reviews) {
