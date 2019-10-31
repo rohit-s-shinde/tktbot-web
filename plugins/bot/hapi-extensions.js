@@ -35,7 +35,6 @@ exports.responseWrapper = function (res) {
 }
 
 /**
- * 
  * interface IWebRequest {
  *     body: any;
  *     headers: {
@@ -43,7 +42,6 @@ exports.responseWrapper = function (res) {
  *     };
  *     on(event: string, ...args: any[]): void;
  * }
- * 
  */
 exports.requestWrapper = function(request) {
     return {
