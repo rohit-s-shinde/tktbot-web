@@ -1,2 +1,2 @@
 # TKTBot Web
-The bot for study.
+The bot for college enquiry.
