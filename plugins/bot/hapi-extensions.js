@@ -1,3 +1,4 @@
+// Bot
 exports.responseWrapper = function (res) {
     return {
         end() {
