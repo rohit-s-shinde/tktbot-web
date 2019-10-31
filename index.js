@@ -1,3 +1,4 @@
+// Index file
 'use strict';
 
 const Glue = require('glue');
