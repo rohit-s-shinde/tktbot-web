@@ -1,4 +1,4 @@
-//db
+
 
 var OrientDB = require('orientjs');
 var dbServer = OrientDB({
@@ -12,5 +12,6 @@ var db = dbServer.use({
     username: 'root',
     password: 'root'
 });
+
 
 module.exports = db;
