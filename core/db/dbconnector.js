@@ -1,3 +1,5 @@
+//db
+
 var OrientDB = require('orientjs');
 var dbServer = OrientDB({
     host: 'localhost',
