@@ -8,7 +8,7 @@ exports.register = function (server, options, next) {
     botDialogs();
     next();
 };
-
+//export.register.attributes
 exports.register.attributes = {
     pkg: require('./package.json')
 };
