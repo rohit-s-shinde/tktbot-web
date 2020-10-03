@@ -1,4 +1,4 @@
-// Routes
+// Bot Routes
 var path = require("path");
 exports.default = function(server){
     server.route({
